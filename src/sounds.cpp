@@ -765,7 +765,7 @@ void sfx::do_vehicle_engine_sfx()
 
     if( !is_channel_playing( ch ) ) {
         play_ambient_variant_sound( id_and_variant.first, id_and_variant.second,
-                                    sfx::get_heard_volume( player_character.pos() ), ch, 1000 );
+                                    sfx::get_heard_volume( player_character.pos() ), ch, 100 );
         add_msg_debug( debugmode::DF_SOUND, "START %s %s", id_and_variant.first, id_and_variant.second );
     } else {
         add_msg_debug( debugmode::DF_SOUND, "PLAYING" );
@@ -827,7 +827,7 @@ void sfx::do_vehicle_engine_sfx()
         Mix_HaltChannel( static_cast<int>( ch ) );
         add_msg_debug( debugmode::DF_SOUND, "STOP speed %d =/= %d", current_speed, previous_speed );
         play_ambient_variant_sound( id_and_variant.first, id_and_variant.second,
-                                    sfx::get_heard_volume( player_character.pos() ), ch, 1000, pitch );
+                                    sfx::get_heard_volume( player_character.pos() ), ch, 100, pitch );
         add_msg_debug( debugmode::DF_SOUND, "PITCH %f", pitch );
     }
     previous_speed = current_speed;
